@@ -45,7 +45,7 @@ export default class AdminQuestions extends Component {
     }
     
     onDeleteAdminQuestion = async (adminQuestionId) => {
-        await axios.delete(`/api/adminQuestion/${adminQuestionid}`)
+        await axios.delete(`/api/adminQuestion/${adminQuestionId}`)
         this.getAllAdminQuestions()
     }
     

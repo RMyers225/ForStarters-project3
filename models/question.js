@@ -32,8 +32,8 @@ function getAllQuestion() {
     return QuestionModel.find({})
 }
 
-function getQuestionById(quesionId) {
-    return QuestionModel.findbyId(quesionId)
+function getQuestionById(questionId) {
+    return QuestionModel.findbyId(questionId)
 }
 
 function create(questionData) {
@@ -44,8 +44,8 @@ function update(quesionId, questionData) {
     QuestionModel.findbyIdAndUpdate(questionId, questionData)
 }
 
-function deleteQuestion(quesionId) {
-    return QuestionModel.findByIdAndDelete(quesionId)
+function deleteQuestion(questionId) {
+    return QuestionModel.findByIdAndDelete(questionId)
 }
 
 module.exports = {
