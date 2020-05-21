@@ -7,9 +7,9 @@ const eventRouter = express.Router()
 eventRouter.get('/', async (req, res) => {
   try {
     const allEvents = await eventModel.getAllEvents()
-    res.json(allBooks)
+    res.json(allEvents)
   } catch (error) {
-    res.statusCode(500).json(error)
+    res.status(500).json(error)
     console.log(error)
   }
 })
@@ -18,9 +18,9 @@ eventRouter.get('/', async (req, res) => {
 eventRouter.get('/:eventId', async (req, res) => {
   try {
     const event = await eventModel.getEventById(req.params.eventId)
-    res.json(book)
+    res.json(event)
   } catch (error) {
-    res.statusCode(500).json(error)
+    res.status(500).json(error)
     console.log(error)
   }
 })
@@ -31,7 +31,7 @@ eventRouter.post('/', async (req, res) => {
     await eventModel.create(req.body)
     res.json('ok')
   } catch (error) {
-    res.statusCode(500).json(error)
+    res.status(500).json(error)
     console.log(error)
   }
 })
@@ -42,7 +42,7 @@ eventRouter.put('/:eventId', async (req, res) => {
     await eventModel.update(req.params.eventId, req.body)
     res.json("ok")
   } catch (error) {
-    res.statusCode(500).json(error)
+    res.status(500).json(error)
     console.log(error)
   }
 })
@@ -53,7 +53,7 @@ eventRouter.delete('/:eventId', async (req, res) => {
     await eventModel.deleteEvent(req.params.eventId)
     res.json("ok")
   } catch (error) {
-    res.statusCode(500).json(error)
+    res.status(500).json(error)
     console.log(error)
   }
 })

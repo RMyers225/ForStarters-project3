@@ -16,8 +16,9 @@ const app = express()
  * import routers from controllers/
  *
  */
-const { templateRouter } = require('./controllers/template.js')
-
+const { eventRouter } = require('./controllers/event.js')
+const { placeRouter } = require('./controllers/place.js')
+const { questionRouter } = require('./controllers/question.js')
 
 /* Step 3
  *
@@ -49,7 +50,10 @@ app.use(express.static(`${__dirname}/client/build`))
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/api/helloworld', templateRouter)
+// app.use('/api/helloworld', templateRouter)
+app.use('/api/event', eventRouter)
+app.use('/api/place', placeRouter)
+app.use('/api/question', questionRouter)
 
 /* Step 5
  *

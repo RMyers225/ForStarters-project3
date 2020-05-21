@@ -18,26 +18,27 @@ const mongoose = require('./connection.js')
 //const SampleModelSchema = new mongoose.Schema({
 //  name: String
 //})
-const EventModel = new mongoose.Schema({
+const EventModelSchema = new mongoose.Schema({
     EventName: String,
     Address: String,
     City: String,
     State: String,
     ZipCode: Number,
+    Description: String,
 })
 /* Step 3
  *
  * TODO: export the schema
  */
 //module.exports = mongoose.model('Sample', SampleModelSchema);
-const EventModel = mongoose.model('Event', EventSchema)
+const EventModel = mongoose.model('Event', EventModelSchema)
 
-function getAllEvent() {
+function getAllEvents() {
     return EventModel.find({})
 }
 
 function getEventById(eventId) {
-    return EventModel.findbyId(eventId)
+    return EventModel.findById(eventId)
 }
 
 function create(eventData) {
@@ -45,7 +46,7 @@ function create(eventData) {
 }
 
 function update(eventId, eventData) {
-    EventModel.findbyIdAndUpdate(eventId, eventData)
+    return EventModel.findByIdAndUpdate(eventId, eventData)
 }
 
 function deleteEvent(eventId) {
@@ -53,8 +54,8 @@ function deleteEvent(eventId) {
 }
 
 module.exports = {
-    getAllEvent,
-    getPlaceByEvent,
+    getAllEvents,
+    getEventById,
     create,
     update,
     deleteEvent

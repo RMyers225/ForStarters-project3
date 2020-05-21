@@ -10,10 +10,10 @@ const questionRouter = express.Router()
 // GET ALL ROUTE
 questionRouter.get('/', async (req, res) => {
     try {
-        const allQuesions = await questionModel.getAllQuestions()
+        const allQuestions = await questionModel.getAllQuestions()
         res.json(allQuestions)
     } catch (error) {
-        res.statusCode(500).json(error)
+        res.status(500).json(error)
         console.log(error)
     }
 })
@@ -22,9 +22,9 @@ questionRouter.get('/', async (req, res) => {
 questionRouter.get('/:questionId', async (req, res) => {
     try {
         const question = await questionModel.getQuestionById(req.params.questionId)
-        res.json(book)
+        res.json(question)
     } catch (error) {
-        res.statusCode(500).json(error)
+        res.status(500).json(error)
         console.log(error)
     }
 })
@@ -35,7 +35,7 @@ questionRouter.post('/', async (req, res) => {
         await questionModel.create(req.body)
         res.json('ok')
     } catch (error) {
-        res.statusCode(500).json(error)
+        res.status(500).json(error)
         console.log(error)
     }
 })
@@ -46,7 +46,7 @@ questionRouter.put('/:questionId', async (req, res) => {
         await questionModel.update(req.params.questionId, req.body)
         res.json("ok")
     } catch (error) {
-        res.statusCode(500).json(error)
+        res.status(500).json(error)
         console.log(error)
     }
 })
@@ -57,7 +57,7 @@ questionRouter.delete('/:questionId', async (req, res) => {
         await questionModel.deleteQuestion(req.params.questionId)
         res.json("ok")
     } catch (error) {
-        res.statusCode(500).json(error)
+        res.status(500).json(error)
         console.log(error)
     }
 })
@@ -69,5 +69,6 @@ questionRouter.delete('/:questionId', async (req, res) => {
  * Export the router from the file.
  *
  */
-module.exports = { questionRouter
+module.exports = {
+    questionRouter
 }

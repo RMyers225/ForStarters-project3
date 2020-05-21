@@ -10,10 +10,10 @@ const placeRouter = express.Router()
 // GET ALL ROUTE
 placeRouter.get('/', async (req, res) => {
   try {
-      const allBooks = await bookModel.getAllBooks()
-      res.json(allBooks)
+      const allPlaces = await placeModel.getAllPlaces()
+      res.json(allPlaces)
   } catch (error) {
-      res.statusCode(500).json(error)
+      res.status(500).json(error)
       console.log(error)
   }
 })
@@ -22,9 +22,9 @@ placeRouter.get('/', async (req, res) => {
 placeRouter.get('/:placeId', async (req, res) => {
   try {
       const place = await placeModel.getPlaceById(req.params.placeId)
-      res.json(book)
+      res.json(place)
   } catch (error) {
-      res.statusCode(500).json(error)
+      res.status(500).json(error)
       console.log(error)
   }
 })
@@ -35,7 +35,7 @@ placeRouter.post('/', async (req, res) => {
       await placeModel.create(req.body)
       res.json('ok')
   } catch (error) {
-      res.statusCode(500).json(error)
+      res.status(500).json(error)
       console.log(error)
   }
 })
@@ -46,7 +46,7 @@ placeRouter.put('/:placeId', async (req, res) => {
       await placeModel.update(req.params.placeId, req.body)
       res.json("ok")
   } catch (error) {
-      res.statusCode(500).json(error)
+      res.status(500).json(error)
       console.log(error)
   }
 })
@@ -54,10 +54,10 @@ placeRouter.put('/:placeId', async (req, res) => {
 // DELETE
 placeRouter.delete('/:placeId', async (req, res) => {
   try {
-      await placeModel.placeBook(req.params.placeId)
+      await placeModel.placeplace(req.params.placeId)
       res.json("ok")
   } catch (error) {
-      res.statusCode(500).json(error)
+      res.status(500).json(error)
       console.log(error)
   }
 })

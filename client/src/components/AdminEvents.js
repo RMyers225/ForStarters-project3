@@ -21,6 +21,7 @@ export default class AdminEvents extends Component {
             description: '',
             address: '',
             cityState: '',
+            zipCode: Number,
             price: 0,
         },
     }
@@ -116,6 +117,15 @@ export default class AdminEvents extends Component {
                             onChange={this.onChangeAdminEvent} />
                     </div>
     
+                    <div>
+                        <label htmlFor="zipCode">Zip Code</label>
+                        <input
+                            type="number"
+                            name="zipCode"
+                            value={this.state.newAdminEvent.price}
+                            onChange={this.onChangeAdminEvent} />
+                    </div> 
+
                     <div>
                         <label htmlFor="price">Price</label>
                         <input

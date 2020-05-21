@@ -28,20 +28,20 @@ const QuestionModelSchema = new mongoose.Schema({
 //module.exports = mongoose.model('Sample', SampleModelSchema);
 const QuestionModel = mongoose.model('question', QuestionModelSchema)
 
-function getAllQuestion() {
+function getAllQuestions() {
     return QuestionModel.find({})
 }
 
 function getQuestionById(questionId) {
-    return QuestionModel.findbyId(questionId)
+    return QuestionModel.findById(questionId)
 }
 
 function create(questionData) {
     return QuestionModel.create(questionData)
 }
 
-function update(quesionId, questionData) {
-    QuestionModel.findbyIdAndUpdate(questionId, questionData)
+function update(questionId, questionData) {
+   return QuestionModel.findByIdAndUpdate(questionId, questionData)
 }
 
 function deleteQuestion(questionId) {
@@ -49,7 +49,7 @@ function deleteQuestion(questionId) {
 }
 
 module.exports = {
-    getAllQuestion,
+    getAllQuestions,
     getQuestionById,
     create,
     update,

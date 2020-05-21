@@ -18,21 +18,22 @@ const mongoose = require('./connection.js')
 //const SampleModelSchema = new mongoose.Schema({
 //  name: String
 //})
-const PlaceModel = new mongoose.Schema({
+const PlaceModelSchema = new mongoose.Schema({
     Name: String,
     Address: String,
     City: String,
     State: String,
     ZipCode: Number,
+    Description: String,
 })
 /* Step 3
  *
  * TODO: export the schema
  */
 //module.exports = mongoose.model('Sample', SampleModelSchema);
-const PlaceModel = mongoose.model('Place', PlaceSchema)
+const PlaceModel = mongoose.model('Place', PlaceModelSchema)
 
-function getAllPlace() {
+function getAllPlaces() {
     return PlaceModel.find({})
 }
 
@@ -53,7 +54,7 @@ function deletePlace(placeId) {
 }
 
 module.exports = {
-    getAllPlace,
+    getAllPlaces,
     getPlaceById,
     create,
     update,
