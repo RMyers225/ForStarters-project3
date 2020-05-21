@@ -31,9 +31,9 @@ export default class AdminPlaces extends Component {
 
     getAllAdminPlaces = async () => {
         try {
-            const res = await axios.get('/api/adminPlace')
+            const res = await axios.get('/api/AdminPlace')
             const newState = { ...this.state }
-            newState.adminPlaces = res.data
+            newState.AdminPlaces = res.data
             this.setState(newState)
         } catch (error) {
             console.log('Failed to get all places')
@@ -47,8 +47,8 @@ export default class AdminPlaces extends Component {
         this.setState(newState)
     }
 
-    onDeleteAdminPlace = async (adminPlaceId) => {
-        await axios.delete(`/api/adminPlace/${adminPlaceid}`)
+    onDeleteAdminPlace = async (AdminPlaceId) => {
+        await axios.delete(`/api/AdminPlace/${AdminPlaceId}`)
         this.getAllAdminPlaces()
     }
 
@@ -56,7 +56,7 @@ export default class AdminPlaces extends Component {
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
-            await axios.post('/api/adminPlace', this.state.newAdminPlace)
+            await axios.post('/api/AdminPlace', this.state.newAdminPlace)
             this.getAllAdminPlaces()
         } catch (error) {
             console.log('Failed to create places')
@@ -77,15 +77,15 @@ export default class AdminPlaces extends Component {
             <div>
                 {/* Accessing the value of message from the state object */}
                 {/* <h1>{this.state.message}</h1> */}
-                <h1>Events</h1>
+                <h1>Date Spots</h1>
                 <form onSubmit={this.onSubmit}>
                     <div>
                         <label htmlFor="name">Name</label>
                         <input
                             type="text"
                             name="name"
-                            value={this.state.newAdminEvent.name}
-                            onChange={this.onChangeAdminEvent} />
+                            value={this.state.newAdminPlace.name}
+                            onChange={this.onChangeAdminPlace} />
                     </div>
 
                     <div>
@@ -93,8 +93,8 @@ export default class AdminPlaces extends Component {
                         <input
                             type="text"
                             name="address"
-                            value={this.state.newAdminEvent.address}
-                            onChange={this.onChangeAdminEvent} />
+                            value={this.state.newAdminPlace.address}
+                            onChange={this.onChangeAdminPlace} />
                     </div>
 
                     <div>
@@ -102,12 +102,12 @@ export default class AdminPlaces extends Component {
                         <input
                             type="text"
                             name="cityState"
-                            value={this.state.newAdminEvent.cityState}
-                            onChange={this.onChangeAdminEvent} />
+                            value={this.state.newAdminPlace.cityState}
+                            onChange={this.onChangeAdminPlace} />
                     </div>
 
                     <div>
-                        <label htmlFor="zipCode">Number</label>
+                        <label htmlFor="zipCode">Zip Code</label>
                         <input
                             type="number"
                             name="zipCode"
@@ -115,7 +115,7 @@ export default class AdminPlaces extends Component {
                             onChange={this.onChangeAdminPlace} />
                     </div>
 
-                    <input type="submit" value="Create Place" />
+                    {/* <input type="submit" value="Create Place" /> */}
                 </form>
             </div>
         )

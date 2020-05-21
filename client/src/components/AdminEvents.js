@@ -34,7 +34,7 @@ export default class AdminEvents extends Component {
         try {
             const res = await axios.get('/api/adminEvent')
             const newState = { ...this.state }
-            newState.adminEvents = res.data
+            newState.AdminEvents = res.data
             this.setState(newState)
         } catch (error) {
             console.log('Failed to get all events')
@@ -48,8 +48,8 @@ export default class AdminEvents extends Component {
         this.setState(newState)
     }
     
-    onDeleteAdminEvent = async (adminEventId) => {
-        await axios.delete(`/api/adminEvent/${adminEventid}`)
+    onDeleteAdminEvent = async (AdminEventId) => {
+        await axios.delete(`/api/AdminEvent/${AdminEventId}`)
         this.getAllAdminEvents()
     }
     
@@ -57,7 +57,7 @@ export default class AdminEvents extends Component {
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
-            await axios.post('/api/adminEvent', this.state.newAdminEvent)
+            await axios.post('/api/AdminEvent', this.state.newAdminEvent)
             this.getAllAdminEvents()
         } catch (error) {
             console.log('Failed to create events')
