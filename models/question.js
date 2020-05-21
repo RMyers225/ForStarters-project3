@@ -18,7 +18,7 @@ const mongoose = require('./connection.js')
 //const SampleModelSchema = new mongoose.Schema({
 //  name: String
 //})
-const QuestionModel = new mongoose.Schema({
+const QuestionModelSchema = new mongoose.Schema({
     question: String,
 })
 /* Step 3
@@ -26,7 +26,7 @@ const QuestionModel = new mongoose.Schema({
  * TODO: export the schema
  */
 //module.exports = mongoose.model('Sample', SampleModelSchema);
-const QuestionModel = mongoose.model('question', QuestionSchema)
+const QuestionModel = mongoose.model('question', QuestionModelSchema)
 
 function getAllQuestion() {
     return QuestionModel.find({})
