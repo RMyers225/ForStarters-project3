@@ -54,7 +54,7 @@ placeRouter.put('/:placeId', async (req, res) => {
 // DELETE
 placeRouter.delete('/:placeId', async (req, res) => {
   try {
-      await placeModel.placeplace(req.params.placeId)
+      await placeModel.deletePlace(req.params.placeId)
       res.json("ok")
   } catch (error) {
       res.status(500).json(error)

@@ -24,7 +24,6 @@ const PlaceModelSchema = new mongoose.Schema({
     City: String,
     State: String,
     ZipCode: Number,
-    Description: String,
 })
 /* Step 3
  *
@@ -38,7 +37,7 @@ function getAllPlaces() {
 }
 
 function getPlaceById(placeId) {
-    return PlaceModel.findbyId(placeId)
+    return PlaceModel.findById(placeId)
 }
 
 function create(placeData) {
@@ -46,7 +45,7 @@ function create(placeData) {
 }
 
 function update(placeId, placeData) {
-    PlaceModel.findbyIdAndUpdate(placeId, placeData)
+    return PlaceModel.findByIdAndUpdate(placeId, placeData)
 }
 
 function deletePlace(placeId) {
