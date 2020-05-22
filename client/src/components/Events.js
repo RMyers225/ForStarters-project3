@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { Link, Redirect, NavLink } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Axios from 'axios'
 
 export default class Events extends React.Component {
