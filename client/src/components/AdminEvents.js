@@ -16,12 +16,13 @@ export default class AdminEvents extends Component {
     */
     state = {
         newAdminEvent: {
-            name: '',
-            description: '',
-            address: '',
-            cityState: '',
-            zipCode: Number,
-            price: 0,
+            EventName: '',
+            Description: '',
+            Address: '',
+            City:'',
+            State: '',
+            ZipCode: 0,
+            Price: 0,
         },
     }
 
@@ -49,7 +50,7 @@ export default class AdminEvents extends Component {
     }
 
     onDeleteAdminEvent = async (AdminEventId) => {
-        await axios.delete(`/api/AdminEvent/${AdminEventId}`)
+        await axios.delete(`/api/event'${AdminEventId}`)
         this.getAllAdminEvents()
     }
 
@@ -57,7 +58,7 @@ export default class AdminEvents extends Component {
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
-            await axios.post('/api/AdminEvent', this.state.newAdminEvent)
+            await axios.post('/api/event', this.state.newAdminEvent)
             this.getAllAdminEvents()
         } catch (error) {
             console.log('Failed to create events')
@@ -81,11 +82,11 @@ export default class AdminEvents extends Component {
                 <h1>Events</h1>
                 <form onSubmit={this.onSubmit}>
                     <div>
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="EventName">Name</label>
                         <input
                             type="text"
-                            name="name"
-                            value={this.state.newAdminEvent.name}
+                            name="EventName"
+                            value={this.state.newAdminEvent.EventName}
                             onChange={this.onChangeAdminEvent} />
                     </div>
 
@@ -93,8 +94,8 @@ export default class AdminEvents extends Component {
                         <label htmlFor="description">Description</label>
                         <input
                             type="text"
-                            name="description"
-                            value={this.state.newAdminEvent.description}
+                            name="Description"
+                            value={this.state.newAdminEvent.Description}
                             onChange={this.onChangeAdminEvent} />
                     </div>
 
@@ -102,26 +103,34 @@ export default class AdminEvents extends Component {
                         <label htmlFor="address">Address</label>
                         <input
                             type="text"
-                            name="address"
-                            value={this.state.newAdminEvent.address}
+                            name="Address"
+                            value={this.state.newAdminEvent.Address}
                             onChange={this.onChangeAdminEvent} />
                     </div>
 
                     <div>
-                        <label htmlFor="cityState">City/State</label>
+                        <label htmlFor="city">City</label>
                         <input
                             type="text"
-                            name="cityState"
-                            value={this.state.newAdminEvent.cityState}
+                            name="City"
+                            value={this.state.newAdminEvent.City}
                             onChange={this.onChangeAdminEvent} />
                     </div>
 
+                    <div>
+                        <label htmlFor="state">State</label>
+                        <input
+                            type="text"
+                            name="State"
+                            value={this.state.newAdminEvent.State}
+                            onChange={this.onChangeAdminEvent} />
+                    </div>
                     <div>
                         <label htmlFor="zipCode">Zip Code</label>
                         <input
                             type="number"
-                            name="zipCode"
-                            value={this.state.newAdminEvent.price}
+                            name="ZipCode"
+                            value={this.state.newAdminEvent.ZipCode}
                             onChange={this.onChangeAdminEvent} />
                     </div>
 
@@ -129,8 +138,8 @@ export default class AdminEvents extends Component {
                         <label htmlFor="price">Price</label>
                         <input
                             type="number"
-                            name="price"
-                            value={this.state.newAdminEvent.price}
+                            name="Price"
+                            value={this.state.newAdminEvent.Price}
                             onChange={this.onChangeAdminEvent} />
                     </div>
 

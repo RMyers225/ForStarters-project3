@@ -5,7 +5,7 @@ import Places from './Places.js'
 export default class SinglePlace extends Component {
 
     state = {
-        newPlace: {
+        onePlace: {
         name: '',
         address: '',
         cityState:'',
@@ -35,7 +35,7 @@ export default class SinglePlace extends Component {
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
-            await axios.post('/api/place', this.state.newPlace)
+            await axios.post('/api/place', this.state.onePlace)
             this.getAllPlaces()
         } catch (error) {
             console.log('Failed to create place')
@@ -50,45 +50,7 @@ export default class SinglePlace extends Component {
                 <h1>Single Place</h1>
             
             </div>
-            <form onSubmit={this.onSubmit}>
-                <div>
-                    <label htmlFor="name">Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        onChange={this.onChangePlace}
-                        value={this.state.name}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="address">Address</label>
-                    <input
-                        type="text"
-                        name="description"
-                        onChange={this.onChangePlace}
-                        value={this.state.address}
-                        />
-                </div>
-                <div>
-                    <label htmlFor="cityState">cityState</label>
-                    <input
-                        type="text"
-                        name="cityState"
-                        onChange={this.onChangePlace}
-                        value={this.state.cityState}
-                        />
-                </div>
-                <div>
-                    <label htmlFor="zipCode">zipCode</label>
-                    <input
-                        type="text"
-                        name="zipCode"
-                        onChange={this.onChangePlace}
-                        value={this.state.zipCode}
-                        />
-                </div>
-                <input type="submit" value="Submit"/>
-            </form>
+           
             </div>    
         )
     }
