@@ -28,8 +28,8 @@ export default class AdminEvents extends Component {
     componentDidMount() {
         this.getAllAdminEvents()
     }
-    
-    
+
+
     getAllAdminEvents = async () => {
         try {
             const res = await axios.get('/api/adminEvent')
@@ -41,19 +41,19 @@ export default class AdminEvents extends Component {
             console.log(error)
         }
     }
-    
+
     onChangeAdminEvent = (evt) => {
-        const newState = {...this.state}
+        const newState = { ...this.state }
         newState.newAdminEvent[evt.target.name] = evt.target.value
         this.setState(newState)
     }
-    
+
     onDeleteAdminEvent = async (AdminEventId) => {
         await axios.delete(`/api/AdminEvent/${AdminEventId}`)
         this.getAllAdminEvents()
     }
-    
-    
+
+
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
@@ -64,9 +64,9 @@ export default class AdminEvents extends Component {
             console.log(error)
         }
     }
-    
-    
-    
+
+
+
     /* Step 5
     *  The render function manages what is shown in the browser
     *  TODO: delete the jsx returned
@@ -88,7 +88,7 @@ export default class AdminEvents extends Component {
                             value={this.state.newAdminEvent.name}
                             onChange={this.onChangeAdminEvent} />
                     </div>
-    
+
                     <div>
                         <label htmlFor="description">Description</label>
                         <input
@@ -97,7 +97,7 @@ export default class AdminEvents extends Component {
                             value={this.state.newAdminEvent.description}
                             onChange={this.onChangeAdminEvent} />
                     </div>
-    
+
                     <div>
                         <label htmlFor="address">Address</label>
                         <input
@@ -106,16 +106,16 @@ export default class AdminEvents extends Component {
                             value={this.state.newAdminEvent.address}
                             onChange={this.onChangeAdminEvent} />
                     </div>
-    
+
                     <div>
                         <label htmlFor="cityState">City/State</label>
-                        <input 
+                        <input
                             type="text"
                             name="cityState"
                             value={this.state.newAdminEvent.cityState}
                             onChange={this.onChangeAdminEvent} />
                     </div>
-    
+
                     <div>
                         <label htmlFor="zipCode">Zip Code</label>
                         <input
@@ -123,7 +123,7 @@ export default class AdminEvents extends Component {
                             name="zipCode"
                             value={this.state.newAdminEvent.price}
                             onChange={this.onChangeAdminEvent} />
-                    </div> 
+                    </div>
 
                     <div>
                         <label htmlFor="price">Price</label>
@@ -132,15 +132,15 @@ export default class AdminEvents extends Component {
                             name="price"
                             value={this.state.newAdminEvent.price}
                             onChange={this.onChangeAdminEvent} />
-                    </div> 
-    
-                    <input type="submit" value="Create Event"/>
+                    </div>
+
+                    <input type="submit" value="Create Event" />
                 </form>
             </div>
         )
     }
- }
-    
+}
+
 /* Step 4
 * Use componentDidMount to retrieve any data to display
 *   Here you can make calls to your local express server

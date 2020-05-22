@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/Events" component={Events}/>
           <Route exact path="/Places" component={Places}/>
           <Route exact path="/Questions" component={Questions}/>
-          <Route exact path="/SingleEvent" component={SingleEvent}/>
+          <Route exact path="/Events/:eventId" component={SingleEvent}/>
           <Route exact path="/SinglePlace" component={SinglePlace}/>
         </Switch>
       </Router>
