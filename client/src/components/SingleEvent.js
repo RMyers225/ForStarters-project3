@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Events from './Events.js'
+// import Events from './Events.js'
 
 export default class SingleEvent extends Component {
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 export default class Places extends React.Component {
 

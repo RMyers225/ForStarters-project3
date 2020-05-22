@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import Axios from 'axios'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 export default class Events extends React.Component {
 
@@ -21,7 +21,7 @@ export default class Events extends React.Component {
 
     getAllEvents = async () => {
         try {
-            const res = await Axios.get('/api/event')
+            const res = await axios.get('/api/event')
             const newState = { ...this.state }
             newState.allEvents = res.data
             this.setState(newState)
@@ -127,7 +127,7 @@ export default class Events extends React.Component {
                             <div>{event.cityState}</div>
                             <div>{event.zipCode}</div>  
                             <div>{event.price}</div>     
-                            <button onClick={() => this.onDeleteCreature(creature._id)}>Delete</button>                     
+                            <button onClick={() => this.onDeleteEvent(event._id)}>Delete</button>                     
                             </div>
                     )
                 })}

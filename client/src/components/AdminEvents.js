@@ -2,7 +2,6 @@
  *
  */
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 /* Step 2
