@@ -33,8 +33,8 @@ export default class Events extends React.Component {
                         <div>
                             <Link to={`/events/${event._id}`}>
                                 <div>{event.EventName}</div>
-                            </Link>
-                            <div>{event.Description}</div>
+                            </Link><div>{event.Description}</div>
+                            
                             <div>{event.Address}</div>
                             <div>{event.City}</div>
                             <div>{event.State}</div>

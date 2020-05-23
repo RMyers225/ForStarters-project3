@@ -6,7 +6,7 @@ import AdminPlaces from './components/AdminPlaces.js'
 import AdminQuestions from './components/AdminQuestions.js'
 import Events from './components/Events.js'
 import Places from './components/Places.js'
-// import Questions from './components/Questions.js'
+import Questions from './components/Questions.js'
 import SingleEvent from './components/SingleEvent.js'
 import SinglePlace from './components/SinglePlace.js'
 import './App.css';
@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/AdminQuestions" component={AdminQuestions}/>
           <Route exact path="/Events" component={Events}/>
           <Route exact path="/Places" component={Places}/>
-          {/* <Route exact path="/Questions" component={Questions}/> */}
+          <Route exact path="/Questions" component={Questions}/>
           <Route exact path="/Events/:eventId" component={SingleEvent}/>
           <Route exact path="/Places/:placeId" component={SinglePlace}/>
         </Switch>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Places from './Places.js'
+// import Places from './Places.js'
 
 export default class SinglePlace extends Component {
 
