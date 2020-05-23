@@ -2,8 +2,21 @@ import React from 'react'
 // import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+function shuffleQuestion(array) {
+    let i = array.length - 1;
+    for (; i > 0; i--) { 
+        const j = Math.floor(Math.random() * (i + 1));    
+        const temp = array[i]; 
+             array[i] = array[j];   
+         array[j] = temp
+              }
+       return array;
+        } 
 
-export default class Questions extends React.Component {
+
+
+export default 
+class Questions extends React.Component {
 
     state = {
         allQuestions: []
@@ -28,15 +41,22 @@ export default class Questions extends React.Component {
     }
 
     render() {
-        const shuffled = shuffleQuestion();
-        return ( 
+        const shuffled = shuffleQuestion(this.state.allQuestions);
+        return (
             <div>
                 <h1>Question</h1>
 
-                
-                <div>{this.state.allQuestions.question}</div>
-        
+                {shuffled.map((question) => {
+                    return (<div key={question._id}>
+                        <div>{question.question}</div>
+
+
+                    </div>
+                    )
+                })}
+                    
             </div>
+
         )
     }
 }
