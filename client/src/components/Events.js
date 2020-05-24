@@ -23,6 +23,13 @@ export default class Events extends React.Component {
             console.log(error)
         }
     }
+
+    onDeleteEvent = async (eventId) => {
+        await axios.delete(`/api/event/${eventId}`)
+        this.getAllEvents()
+    }
+
+
     render() {
         return (
             <div>

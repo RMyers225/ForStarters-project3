@@ -2,7 +2,6 @@
  *
  */
 import React, { Component } from 'react'
-
 import axios from 'axios'
 
 /* Step 2
@@ -19,7 +18,8 @@ export default class AdminPlaces extends Component {
         newAdminPlace: {
             name: '',
             address: '',
-            cityState: '',
+            City: '',
+            State: '',
             zipCode: Number,
         },
     }
@@ -77,7 +77,7 @@ export default class AdminPlaces extends Component {
             <div>
                 {/* Accessing the value of message from the state object */}
                 {/* <h1>{this.state.message}</h1> */}
-                <h1>Date Spots</h1>
+                <h1>Date Places</h1>
                 <form onSubmit={this.onSubmit}>
                     <div>
                         <label htmlFor="name">Name</label>
@@ -98,11 +98,20 @@ export default class AdminPlaces extends Component {
                     </div>
 
                     <div>
-                        <label htmlFor="cityState">City/State</label>
+                        <label htmlFor="City">City</label>
                         <input
                             type="text"
-                            name="cityState"
-                            value={this.state.newAdminPlace.cityState}
+                            name="City"
+                            value={this.state.newAdminPlace.City}
+                            onChange={this.onChangeAdminPlace} />
+                    </div>
+
+                    <div>
+                        <label htmlFor="State">State</label>
+                        <input
+                            type="text"
+                            name="State"
+                            value={this.state.newAdminPlace.State}
                             onChange={this.onChangeAdminPlace} />
                     </div>
 
@@ -115,7 +124,8 @@ export default class AdminPlaces extends Component {
                             onChange={this.onChangeAdminPlace} />
                     </div>
 
-                    {/* <input type="submit" value="Create Place" /> */}
+                    <input type="submit" value="Create Place" />
+                    {/* <button onClick={() => this.onDeleteAdminPlace(AdminPlace._id)}>Delete</button> */}
                 </form>
             </div>
         )
