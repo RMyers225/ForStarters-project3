@@ -8,14 +8,16 @@ import axios from 'axios'
  * Rename this class to reflect the component being created
  *
  */
-export default class HelloWorld extends Component {
+export default class Homepage extends Component {
 
     /* Step 3
     * Create a state for the component to store view data
     *
     */
     state = {
-        message: ''
+        questions: '',
+        datePlaces: '',
+        events: '',
     }
 
     /* Step 4
@@ -26,7 +28,7 @@ export default class HelloWorld extends Component {
     *   -REMINDER remember `setState` it is an async function
     */
     componentDidMount() {
-        axios.get('/api/helloworld')
+        axios.get('/api/homepage')
             .then((res) => {
                 this.setState({message: res.data})
             })
@@ -41,8 +43,11 @@ export default class HelloWorld extends Component {
     render() {
         return (
             <div>
+                <h1>For Starters</h1>
                 {/* Accessing the value of message from the state object */}
-                <h1>{this.state.message}</h1>
+                <h1>{this.state.questions}</h1>
+                <h1>{this.state.datePlaces}</h1>
+                <h1>{this.state.events}</h1>
             </div>
         )
     }

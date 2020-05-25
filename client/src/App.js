@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import HelloWorld from './components/HelloWorld.js'
+import Homepage from './components/Homepage.js'
 import AdminEvents from './components/AdminEvents.js'
 import AdminPlaces from './components/AdminPlaces.js'
 import AdminQuestions from './components/AdminQuestions.js'
@@ -16,7 +16,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={HelloWorld}/>
+          {/* <Route exact path="/" component={HelloWorld}/> */}
+          <Route exact path="/" component={Homepage}/>
           <Route exact path="/AdminEvents" component={AdminEvents}/>
           <Route exact path="/AdminPlaces" component={AdminPlaces}/>
           <Route exact path="/AdminQuestions" component={AdminQuestions}/>
