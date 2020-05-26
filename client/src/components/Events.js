@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import AdminEvents from './AdminEvents'
 
 export default class Events extends React.Component {
 
@@ -15,6 +16,7 @@ export default class Events extends React.Component {
                 State: String,
                 ZipCode: Number,
                 Description: String,
+                Price: Number
             }
         ]
     }
@@ -41,6 +43,11 @@ export default class Events extends React.Component {
         }
     }
 
+    addNewEventToEventList = (newEvent) => {
+        const eventList = [...this.state.eventList];
+        eventList.push(newEvent);
+        this.setState({ eventList });
+    };
 
 
     onDeleteEvent = async (eventId) => {
@@ -68,7 +75,9 @@ export default class Events extends React.Component {
                             <div>{event.ZipCode}</div>
                             <div>{event.Price}</div>
                             <button onClick={() => this.onDeleteEvent(event._id)}>Delete Event</button>
-                            <button onClick={this.toggleEditSaleItem}>Edit Event</button>
+
+                              <br></br>  
+                        
                         </div>
                     )
                 })}

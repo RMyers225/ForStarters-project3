@@ -57,6 +57,10 @@ shuffleQuestion = (array) => {
     }
 } 
 
+onChangeQuestion = async (questionId) => {
+    await axios.delete(`/api/question/${this.state.allQuestions._id}`, this.state.allQuestions)
+    this.getAllQuestions()
+}
 
 render() {
     

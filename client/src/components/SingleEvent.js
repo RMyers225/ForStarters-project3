@@ -14,12 +14,6 @@ export default class SingleEvent extends Component {
         this.getEventById()
     }
 
-    // onChangeCreature = (evt) => {
-    //     const newState = {...this.state}
-    //     newState.newCreature[evt.target.name] = evt.target.value
-    //     this.setState(newState)
-    // }
-
     getEventById = async () => {
         const eventId = this.props.match.params.eventId
         console.log('eventId', eventId)
@@ -30,16 +24,78 @@ export default class SingleEvent extends Component {
         this.setState(newState)
     }
 
-    // onSubmit = async (evt) => {
-    //     evt.preventDefault()
-    //     try {
-    //         await axios.post('/api/event', this.state.newEvent)
-    //         this.getAllEvents()
-    //     } catch (error) {
-    //         console.log('Failed to create event')
-    //         console.log(error)
-    //     }
-    // }
+    onChangeSingleEventName = (evt) => {
+
+       const eventName = evt.target.value
+       const newState = {...this.state}
+       newState.oneEvent.EventName = eventName
+       this.setState(newState)
+
+    }
+
+    onChangeSingleDescription = (evt) => {
+
+        const Description = evt.target.value
+        const newState = {...this.state}
+        newState.oneEvent.Description = Description
+        this.setState(newState)
+ 
+     }
+
+     onChangeSingleAddress = (evt) => {
+
+        const Address = evt.target.value
+        const newState = {...this.state}
+        newState.oneEvent.Address = Address
+        this.setState(newState)
+ 
+     }
+    
+     onChangeSingleCity = (evt) => {
+
+        const City = evt.target.value
+        const newState = {...this.state}
+        newState.oneEvent.City = City
+        this.setState(newState)
+ 
+     }
+
+     onChangeSingleState = (evt) => {
+
+        const State = evt.target.value
+        const newState = {...this.state}
+        newState.oneEvent.State = State
+        this.setState(newState)
+ 
+     }
+     onChangeSingleZipCode = (evt) => {
+
+        const ZipCode = evt.target.value
+        const newState = {...this.state}
+        newState.oneEvent.ZipCode = ZipCode
+        this.setState(newState)
+ 
+     }
+
+     onChangeSinglePrice = (evt) => {
+
+        const Price = evt.target.value
+        const newState = {...this.state}
+        newState.oneEvent.Price = Price
+        this.setState(newState)
+ 
+     }
+
+    onSubmit = async (evt) => {
+        evt.preventDefault()
+        try {
+            await axios.put(`/api/event/${this.state.oneEvent._id}`, this.state.oneEvent)
+            this.getAllEvents()
+        } catch (error) {
+            console.log('Failed to create event')
+            console.log(error)
+        }
+    }
 
     render() {
 
@@ -52,6 +108,80 @@ export default class SingleEvent extends Component {
                 <div>{this.state.oneEvent.City}</div>
                 <div>{this.state.oneEvent.State}</div>
                 <div>{this.state.oneEvent.ZipCode}</div>
+
+
+                <form onSubmit={this.onSubmit}>
+                    <div>
+                        <label htmlFor="EventName">Name</label>
+                        <input
+                            type="text"
+                            name="EventName"
+                            value={this.state.oneEvent.EventName}
+                            onChange={this.onChangeSingleEventName}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="description">Description</label>
+                        <input
+                            type="text"
+                            name="Description"
+                            value={this.state.oneEvent.Description}
+                        onChange={this.onChangeSingleDescription} 
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="address">Address</label>
+                        <input
+                            type="text"
+                            name="Address"
+                            value={this.state.oneEvent.Address}
+                        onChange={this.onChangeSingleAddress}
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="city">City</label>
+                        <input
+                            type="text"
+                            name="City"
+                            value={this.state.oneEvent.City}
+                        onChange={this.onChangeSingleCity} 
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="state">State</label>
+                        <input
+                            type="text"
+                            name="State"
+                            value={this.state.oneEvent.State}
+                        onChange={this.onChangeSingleState}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="zipCode">Zip Code</label>
+                        <input
+                            type="number"
+                            name="ZipCode"
+                            value={this.state.oneEvent.ZipCode}
+                        onChange={this.onChangeSingleZipCode} 
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="price">Price</label>
+                        <input
+                            type="number"
+                            name="Price"
+                            value={this.state.oneEvent.Price}
+                        onChange={this.onChangeSinglePrice}
+                        />
+                    </div>
+
+                    <input type="submit" value="Update Event" />
+                </form>
             </div>
 
         </div>
