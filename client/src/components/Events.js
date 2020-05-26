@@ -48,6 +48,7 @@ export default class Events extends React.Component {
                             <div>{event.ZipCode}</div>
                             <div>{event.Price}</div>
                             <button onClick={() => this.onDeleteEvent(event._id)}>Delete</button>
+    
                         </div>
                     )
                 })}

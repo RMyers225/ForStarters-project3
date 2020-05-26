@@ -57,6 +57,7 @@ shuffleQuestion = (array) => {
     }
 } 
 
+
 render() {
     
  return (
@@ -66,6 +67,8 @@ render() {
         {this.state.singleQuestion}
     </div>                
         
+    
+
                     
             </div >     
 

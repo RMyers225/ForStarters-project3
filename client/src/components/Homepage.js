@@ -3,7 +3,8 @@
  */
 import React, { Component } from 'react'
 import axios from 'axios'
-import Img from 'react-dom'
+
+
 
 
 /* Step 2
@@ -42,35 +43,47 @@ export default class Homepage extends Component {
     *   and replace it with your own custom jsx template
     *
     */
+
+    //    <let Image_Http_URL ={ uri: 'https://i.imgur.com/T2mmi6J.jpg'}>
+
     render() {
         return (
             <div>
                 <h1>For Starters</h1>
+
+                <div className= "navbar">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/questions">Questions</a></li>
+                        <li><a href="/places">Date Places</a></li>
+                        <li><a href="/events">Events</a></li>
+                    </ul>
+                    </div>
+
+
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.questions}</h1>
                 <h1>{this.state.datePlaces}</h1>
                 <h1>{this.state.events}</h1>
 
-                <p>Whether it's been awkward, boring, or nonexistent the dating world could use some help in the conversation department.<br></br>
-<br></br>
+                <div>
+                    <img src='https://i.imgur.com/T2mmi6J.jpg' />
+                </div>
+
+
+                <div>
+                    <p>Whether it's been awkward, boring, or nonexistent the dating world could use some help in the conversation department.<br></br>
+                        <br></br>
 For Starters...is a conversation starter app specifically designed to put some depth and spice back into getting to know each other. It will serve as a question bank of fun, funny, hypothetical and real life questions that are formed to allow you to see someone’s character, not rehearsed “date answer”.<br></br>
-<br></br>
+                        <br></br>
 Users can use this as a tool to select a few go-to questions for later, or open and play as a game with your date. Whichever method you choose, you’ll be prepared.<br></br>
-<br></br>
+                        <br></br>
 Mothers always say, “It’s not what you ask, it’s how you ask.” So tell me, what’s your starter?</p>
 
-{/* <Img
-// style={{width: 250, height: 250}}
-src='https://i.imgur.com/T2mmi6J.jpg'
-alt = 'new'
-/> */}
+                </div>
 
-                <ul>
-                    <li><a href="default.asp">Home</a></li>
-                    <li><a href="questions.asp">Questions</a></li>
-                    <li><a href="datePlaces.asp">Date Places</a></li>
-                    <li><a href="events.asp">Events</a></li>
-                </ul>
+               
+
             </div>
         )
     }
