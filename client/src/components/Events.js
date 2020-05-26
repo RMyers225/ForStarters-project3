@@ -5,11 +5,28 @@ import axios from 'axios'
 export default class Events extends React.Component {
 
     state = {
-        allEvents: []
+        allEvents: [],
+        editEvent: true,
+        eventList: [
+            {
+                EventName: String,
+                Address: String,
+                City: String,
+                State: String,
+                ZipCode: Number,
+                Description: String,
+            }
+        ]
     }
 
     componentDidMount() {
         this.getAllEvents()
+
+    }
+
+    toggleEditEvent = () => {
+        const editEvent = !this.state;
+        this.setState({ editEvent: editEvent });
     }
 
     getAllEvents = async () => {
@@ -24,10 +41,13 @@ export default class Events extends React.Component {
         }
     }
 
+
+
     onDeleteEvent = async (eventId) => {
         await axios.delete(`/api/event/${eventId}`)
         this.getAllEvents()
     }
+
 
 
     render() {
@@ -41,14 +61,14 @@ export default class Events extends React.Component {
                             <Link to={`/events/${event._id}`}>
                                 <div>{event.EventName}</div>
                             </Link><div>{event.Description}</div>
-                            
+
                             <div>{event.Address}</div>
                             <div>{event.City}</div>
                             <div>{event.State}</div>
                             <div>{event.ZipCode}</div>
                             <div>{event.Price}</div>
-                            <button onClick={() => this.onDeleteEvent(event._id)}>Delete</button>
-    
+                            <button onClick={() => this.onDeleteEvent(event._id)}>Delete Event</button>
+                            <button onClick={this.toggleEditSaleItem}>Edit Event</button>
                         </div>
                     )
                 })}
