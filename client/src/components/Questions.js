@@ -22,7 +22,7 @@ class Questions extends React.Component {
 
     state = {
         allQuestions: []
-    }        
+    }          
     
 componentDidMount() {
         this.getAllQuestions()
@@ -64,10 +64,10 @@ render() {
                 <h1>Question</h1>
     <div>
         {this.state.singleQuestion}
-    </div>            
-      
+    </div>                
+        
                     
-            </div >    
+            </div >     
 
         )
     }

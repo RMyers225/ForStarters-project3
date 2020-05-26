@@ -9,7 +9,8 @@ ul {
   width: 200px;
   background-color: #e1ad21;
   position: relative;
-  left: 30px;
+  left: 460px;
+  bottom: 860px;
   border: 3px solid #cc5500;
 }
 
@@ -26,7 +27,6 @@ li a:hover {
   background-color: #8A2BE2;
   color: white;
 }
-
 
 
 .App-logo {
@@ -46,6 +46,12 @@ li a:hover {
   color: white;
 }
 
+p {
+  margin: 300px;
+  top: 0px;
+  position: relative;
+  top: 300px;
+}
 .App-link {
   color: #61dafb;
 }
