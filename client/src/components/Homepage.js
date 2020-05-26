@@ -59,11 +59,11 @@ Users can use this as a tool to select a few go-to questions for later, or open 
 <br></br>
 Mothers always say, “It’s not what you ask, it’s how you ask.” So tell me, what’s your starter?</p>
 
-<Img
+{/* <Img
 // style={{width: 250, height: 250}}
 src='https://i.imgur.com/T2mmi6J.jpg'
 alt = 'new'
-/>
+/> */}
 
                 <ul>
                     <li><a href="default.asp">Home</a></li>
