@@ -16,11 +16,11 @@ export default class AdminPlaces extends Component {
     */
     state = {
         newAdminPlace: {
-            name: '',
-            address: '',
+            Name: '',
+            Address: '',
             City: '',
             State: '',
-            zipCode: Number,
+            ZipCode: '',
         },
     }
 
@@ -31,7 +31,7 @@ export default class AdminPlaces extends Component {
 
     getAllAdminPlaces = async () => {
         try {
-            const res = await axios.get('/api/AdminPlace')
+            const res = await axios.get('/api/place')
             const newState = { ...this.state }
             newState.AdminPlaces = res.data
             this.setState(newState)
@@ -48,7 +48,7 @@ export default class AdminPlaces extends Component {
     }
 
     onDeleteAdminPlace = async (AdminPlaceId) => {
-        await axios.delete(`/api/AdminPlace/${AdminPlaceId}`)
+        await axios.delete(`/api/place/${AdminPlaceId}`)
         this.getAllAdminPlaces()
     }
 
@@ -56,7 +56,7 @@ export default class AdminPlaces extends Component {
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
-            await axios.post('/api/AdminPlace', this.state.newAdminPlace)
+            await axios.post('/api/place', this.state.newAdminPlace)
             this.getAllAdminPlaces()
         } catch (error) {
             console.log('Failed to create places')
@@ -83,8 +83,8 @@ export default class AdminPlaces extends Component {
                         <label htmlFor="name">Name</label>
                         <input
                             type="text"
-                            name="name"
-                            value={this.state.newAdminPlace.name}
+                            name="Name"
+                            value={this.state.newAdminPlace.Name}
                             onChange={this.onChangeAdminPlace} />
                     </div>
 
@@ -92,8 +92,8 @@ export default class AdminPlaces extends Component {
                         <label htmlFor="address">Address</label>
                         <input
                             type="text"
-                            name="address"
-                            value={this.state.newAdminPlace.address}
+                            name="Address"
+                            value={this.state.newAdminPlace.Address}
                             onChange={this.onChangeAdminPlace} />
                     </div>
 
@@ -119,8 +119,8 @@ export default class AdminPlaces extends Component {
                         <label htmlFor="zipCode">Zip Code</label>
                         <input
                             type="number"
-                            name="zipCode"
-                            value={this.state.newAdminPlace.zipCode}
+                            name="ZipCode"
+                            value={this.state.newAdminPlace.ZipCode}
                             onChange={this.onChangeAdminPlace} />
                     </div>
 

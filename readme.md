@@ -29,3 +29,6 @@ following:
 1. `npm init`
 1. `mkdir models views controllers`
 1. `touch ./server.js`
+
+
+https://git.generalassemb.ly/RMyers/forstarters-project-3
