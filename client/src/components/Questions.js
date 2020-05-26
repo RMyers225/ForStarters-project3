@@ -72,7 +72,9 @@ render() {
     </div>                     
     
 
-    
+    <div>
+        <img src='https://i.imgur.com/T2mmi6J.jpg' />
+    </div>
 
                     
             </div >     

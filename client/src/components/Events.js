@@ -61,6 +61,11 @@ export default class Events extends React.Component {
         return (
             <div>
                 <h1>Events</h1>
+                <div>
+                    <img 
+                    width={200}
+                    src='https://i.imgur.com/T2mmi6J.jpg' />
+                </div>
 
                 {this.state.allEvents.map((event) => {
                     return (

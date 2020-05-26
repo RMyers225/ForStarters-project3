@@ -29,6 +29,11 @@ export default class Places extends React.Component {
         return (
             <div>
                 <h1>Date Places</h1>
+                <div>
+                    <img 
+                    width={200}
+                    src='https://i.imgur.com/T2mmi6J.jpg' />
+                </div>
 
                 {this.state.allPlaces.map((place) => {
                     return (
