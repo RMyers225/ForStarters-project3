@@ -25,6 +25,7 @@ const EventModelSchema = new mongoose.Schema({
     State: String,
     ZipCode: Number,
     Description: String,
+    Price: Number,
 })
 /* Step 3
  *

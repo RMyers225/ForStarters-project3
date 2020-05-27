@@ -16,7 +16,7 @@ export default class Events extends React.Component {
                 State: String,
                 ZipCode: Number,
                 Description: String,
-                Price: Number
+                Price: Number,
             }
         ]
     }
