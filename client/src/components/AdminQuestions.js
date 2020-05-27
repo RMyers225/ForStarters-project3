@@ -28,7 +28,7 @@ export default class AdminQuestions extends Component {
     
     getAllAdminQuestions = async () => {
         try {
-            const res = await axios.get('/api/adminQuestion')
+            const res = await axios.get('/api/question')
             const newState = { ...this.state }
             newState.adminQuestions = res.data
             this.setState(newState)
@@ -45,7 +45,7 @@ export default class AdminQuestions extends Component {
     }
     
     onDeleteAdminQuestion = async (adminQuestionId) => {
-        await axios.delete(`/api/adminQuestion/${adminQuestionId}`)
+        await axios.delete(`/api/question/${adminQuestionId}`)
         this.getAllAdminQuestions()
     }
     
@@ -53,7 +53,7 @@ export default class AdminQuestions extends Component {
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
-            await axios.post('/api/adminQuestion', this.state.newAdminQuestion)
+            await axios.post('/api/question', this.state.newAdminQuestion)
             this.getAllAdminQuestions()
         } catch (error) {
             console.log('Failed to create questions')
