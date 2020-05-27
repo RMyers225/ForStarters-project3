@@ -1,7 +1,7 @@
 # ForStarters-project-3
 ## General Assembly Project 3 SEI-27
 
-** Purppose: **
+** Purpose: **
 
 ** Who is this for : ** For Starters...is a conversation starter app specifically designed to put some depth and spice back into getting to know each other. 
 It will serve as a question bank of fun, funny, hypothetical and real life questions that are formed to allow you to see someone’s character, not rehearsed “date answer”.

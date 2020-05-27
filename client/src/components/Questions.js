@@ -75,7 +75,7 @@ render() {
     <div>
         <img src='https://i.imgur.com/T2mmi6J.jpg' />
     </div>
-
+<button onClick = {this.getAllQuestions}> Next Question</button>
                     
             </div >     
 
