@@ -54,7 +54,6 @@ app.use(express.static(`${__dirname}/client/build`))
 app.use('/api/event', eventRouter)
 app.use('/api/place', placeRouter)
 app.use('/api/question', questionRouter)
-question
 /* Step 5
  *
  * add catch all route to serve up the built react app for any request not made to our

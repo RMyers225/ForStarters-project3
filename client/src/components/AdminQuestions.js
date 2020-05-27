@@ -24,8 +24,8 @@ export default class AdminQuestions extends Component {
     componentDidMount() {
         this.getAllAdminQuestions()
     }
-    
-    
+
+
     getAllAdminQuestions = async () => {
         try {
             const res = await axios.get('/api/question')
@@ -37,19 +37,19 @@ export default class AdminQuestions extends Component {
             console.log(error)
         }
     }
-    
+
     onChangeAdminQuestion = (evt) => {
-        const newState = {...this.state}
+        const newState = { ...this.state }
         newState.newAdminQuestion[evt.target.name] = evt.target.value
         this.setState(newState)
     }
-    
+
     onDeleteAdminQuestion = async (adminQuestionId) => {
-        await axios.delete(`/api/question/${AdminQuestionId}`)
+        await axios.delete(`/api/question/${adminQuestionId}`)
         this.getAllAdminQuestions()
     }
-    
-    
+
+
     onSubmit = async (evt) => {
         evt.preventDefault()
         try {
@@ -60,9 +60,9 @@ export default class AdminQuestions extends Component {
             console.log(error)
         }
     }
-    
-    
-    
+
+
+
     /* Step 5
     *  The render function manages what is shown in the browser
     *  TODO: delete the jsx returned
@@ -80,18 +80,18 @@ export default class AdminQuestions extends Component {
                         <label htmlFor="question">Question</label>
                         <input
                             type="text"
-                            question="question"
-                            value={this.state.newAdminQuestion.question}
+                            name="question"
+                            // value={this.state.newAdminQuestion.question}
                             onChange={this.onChangeAdminQuestion} />
                     </div>
-    
-                    <input type="submit" value="Create Question"/>
+
+                    <input type="submit" value="Create Question" />
                 </form>
             </div>
         )
     }
- }
-    
+}
+
 /* Step 4
 * Use componentDidMount to retrieve any data to display
 *   Here you can make calls to your local express server
