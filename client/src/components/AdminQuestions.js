@@ -30,7 +30,7 @@ export default class AdminQuestions extends Component {
         try {
             const res = await axios.get('/api/question')
             const newState = { ...this.state }
-            newState.adminQuestions = res.data
+            newState.AdminQuestions = res.data
             this.setState(newState)
         } catch (error) {
             console.log('Failed to get all questions')
@@ -45,7 +45,7 @@ export default class AdminQuestions extends Component {
     }
     
     onDeleteAdminQuestion = async (adminQuestionId) => {
-        await axios.delete(`/api/question/${adminQuestionId}`)
+        await axios.delete(`/api/question/${AdminQuestionId}`)
         this.getAllAdminQuestions()
     }
     
