@@ -11,3 +11,5 @@ As a bonus, we display date venues as well as events that would be great for a d
 
 [GitHub Project Board for this project ](https://git.generalassemb.ly/RMyers/forstarters-project-3/projects/1)
 
+## ERD Images
+![ERD img 1](https://git.generalassemb.ly/RMyers/forstarters-project-3/blob/master/PlanningFIles/ERD-1.jpg?raw=true)
