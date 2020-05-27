@@ -12,6 +12,7 @@ const mongoose = require('mongoose');
 const connectionString = process.env.MONGODB_URI || "mongodb://localhost/forStarters";
 
 
+
 /* Step 2
  *
  * Open up a connection to the mongo database.
