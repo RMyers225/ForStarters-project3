@@ -11,3 +11,17 @@ As a bonus, we display date venues as well as events that would be great for a d
 
 [GitHub Project Board for this project ](https://git.generalassemb.ly/RMyers/forstarters-project-3/projects/1)
 
+## ERD Images
+![ERD img 1](https://git.generalassemb.ly/RMyers/forstarters-project-3/blob/master/PlanningFIles/ERD-1.jpg?raw=true)
+
+![ERD img 2](https://git.generalassemb.ly/RMyers/forstarters-project-3/blob/master/PlanningFIles/ERD-2.jpg?raw=true)
+
+## Wireframing Images
+
+![Wireframing img 1](https://git.generalassemb.ly/RMyers/forstarters-project-3/blob/master/PlanningFIles/wireframe1.jpg?raw=true)
+
+![Wireframing img 2](https://git.generalassemb.ly/RMyers/forstarters-project-3/blob/master/PlanningFIles/Wireframe-2.jpg?raw=true)
+
+![Wireframing img 3](https://git.generalassemb.ly/RMyers/forstarters-project-3/blob/master/PlanningFIles/wireframe-3.jpg?raw=true)
+
+![Wireframing img 4](https://git.generalassemb.ly/RMyers/forstarters-project-3/blob/master/PlanningFIles/wireframe-4.jpg?raw=true)
